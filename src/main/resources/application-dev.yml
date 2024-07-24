@@ -1,0 +1,57 @@
+server:
+  port: 80
+
+
+spring:
+  servlet:
+    multipart:
+      max-file-size: -1
+      max-request-size: -1
+  datasource:
+    url: ${DATABASE_URL}
+    username: ${DATABASE_USERNAME}
+    password: ${DATABASE_PASSWORD}
+  jpa:
+    hibernate:
+      ddl-auto: update
+      
+    show-sql: true
+    properties:
+      hibernate:
+       enable_lazy_load_no_trans: true
+    open-in-view: false
+
+springdoc:
+  api-docs:
+    path: /api/v1/docs
+  swagger-ui:
+    tags-sorter: alphabetically
+    path: /api/v1/swagger-ui.html
+#    operations-sorter: alpha
+
+
+
+
+dataLoaderMode: never
+
+
+twilio.accountSID: ${TWILIO_ACCOUNT_SID}
+twilio.authToken: ${TWILIO_AUTH_TOKEN}
+twilio.myTwilioPhoneNumber: ${TWILIO_PHONE_NUMBER}
+
+
+accessTokenLifeTime: 86400000
+refreshTokenLifeTime: 172800000
+
+tokenSecretKey: ${TOKEN_SECRET}
+
+verificationCodeLimit: 10
+verificationCodeTime: 86400000
+
+verificationCodeExpiredTime: 180000
+
+orderLifeTime: 3000000
+
+
+
+
